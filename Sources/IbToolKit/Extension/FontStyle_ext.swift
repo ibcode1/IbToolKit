@@ -2,7 +2,7 @@
 //  FontStyle_ext.swift
 //
 //
-//  Created by Ibrahim fuseini on 06/06/2024.
+//  Created by Ibrahim fuseini on 10/12/2025.
 //
 
 import IbFoundation
