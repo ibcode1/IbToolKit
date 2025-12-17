@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ApiServiceProtocol {
+public protocol ApiServiceProtocol: Sendable {
 
     func fetchData<T: Decodable>(for endpoint: URLBuilding) async throws -> T
 }
