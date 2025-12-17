@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol URLBuilding {
+public protocol URLBuilding: Sendable {
     /// A fully constructed URLRequest based on the current state of the builder.
     ///
     /// Implementations should return `nil` if the components cannot form a valid URL.
