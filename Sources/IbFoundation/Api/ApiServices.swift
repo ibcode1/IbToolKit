@@ -11,7 +11,7 @@ public final class ApiServices: ApiServiceProtocol {
     private let urlSession: URLSession
     private let decoder: JSONDecoder
 
-    public init(urlSession: URLSession, decoder: JSONDecoder) {
+    public init(urlSession: URLSession = URLSession.shared, decoder: JSONDecoder = JSONDecoder()) {
         self.urlSession = urlSession
         self.decoder = decoder
     }
