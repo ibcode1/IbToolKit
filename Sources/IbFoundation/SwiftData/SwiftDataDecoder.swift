@@ -35,7 +35,7 @@ public extension JSONDecoder {
 
         // SwiftData uses the "context" key (the same one the template uses)
         if let container = modelContainer {
-            decoder.userInfo[.modelContainer] = container
+            decoder.userInfo[CodingUserInfoKey.modelContainer] = container
         }
 
         return decoder
