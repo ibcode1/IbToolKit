@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Bundle {
+public extension Bundle {
 
   func decode<D: Decodable>(
     _ type: D.Type = D.self,
