@@ -35,6 +35,7 @@ import UIKit
 /// Thread-safety:
 /// - `registerCustomFonts()` flips an internal flag to prevent duplicate work and is safe to call
 ///   from the main thread during app startup (e.g., in `AppDelegate` or app initialization).
+@MainActor
 public class FontManager {
 
   /// Creates a new font manager.
@@ -43,7 +44,7 @@ public class FontManager {
   /// Tracks whether custom fonts have already been registered for the current process.
   ///
   /// This flag ensures that `registerCustomFonts()` performs work only once per instance.
-  private var didRegisterCustomFonts: Bool = false
+  private static var didRegisterCustomFonts: Bool = false
 
   /// Registers all custom fonts that require registration.
   ///
@@ -58,8 +59,8 @@ public class FontManager {
   /// - Safe to call multiple times; subsequent calls will return early after the first successful call.
   public func registerCustomFonts() {
 
-    guard didRegisterCustomFonts == false else { return }
-    didRegisterCustomFonts = true
+      guard Self.didRegisterCustomFonts == false else { return }
+      Self.didRegisterCustomFonts = true
 
     let fontsRequiringRegistration = IbFontName.allCases.filter { $0.requiresRegistration }
 
