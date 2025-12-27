@@ -7,6 +7,7 @@
 
 import Observation
 
+@MainActor
 @Observable
 public class FontViewModel {
 
