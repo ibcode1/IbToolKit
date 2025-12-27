@@ -106,7 +106,7 @@ public enum IbFontStyle {
 }
 
 // swiftlint:enable identifier_name
-
+@MainActor
 public extension Font {
 
     static func ibFont(
